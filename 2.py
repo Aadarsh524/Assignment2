@@ -1,15 +1,19 @@
 import pandas as pd
 import glob
 
-# Get list of CSV files in the "temperatures" folder
+# Get the list of CSV files in the "temperatures" folder
 #This uses glob pattern matching to find all files ending with .csv
 csv_files = glob.glob('temperature_data/*.csv')
 
 # Read and concatenate all CSV files into a single DataFrame
+#Creates a list of DataFrames by reading each CSV file
+# Then combines all DataFrames vertically using pd.concat
+
 dfs = [pd.read_csv(file) for file in csv_files]
 all_data = pd.concat(dfs, ignore_index=True)
 
 # Melt the DataFrame to transform monthly columns into rows
+#
 melted = pd.melt(all_data, id_vars=['STN_ID'], 
                  value_vars=['January', 'February', 'March', 'April', 'May', 'June', 
                              'July', 'August', 'September', 'October', 'November', 'December'], 
