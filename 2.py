@@ -2,6 +2,7 @@ import pandas as pd
 import glob
 
 # Get list of CSV files in the "temperatures" folder
+#This uses glob pattern matching to find all files ending with .csv
 csv_files = glob.glob('temperature_data/*.csv')
 
 # Read and concatenate all CSV files into a single DataFrame
