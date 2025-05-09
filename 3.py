@@ -1,3 +1,8 @@
+"""
+    Code to draw a fractal tree using turtle graphics.
+    The tree is drawn recursively, with branches splitting at specified angles.
+    """
+
 import turtle
 
 def draw_tree(length, depth, left_angle, right_angle, reduction_factor, initial_depth):
@@ -25,7 +30,7 @@ start_length = float(input("Enter starting branch length (pixels): "))
 depth = int(input("Enter recursion depth: "))
 reduction_factor = float(input("Enter branch length reduction factor (e.g., 0.7 for 70%): "))
 
-# Set up turtle
+# Set up turtle graphics with different values
 turtle.speed(0)
 turtle.hideturtle()
 turtle.penup()
