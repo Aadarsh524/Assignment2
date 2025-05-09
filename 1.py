@@ -61,14 +61,11 @@ def main():
     # Decrypt and verify
     decrypted = decrypt(n, m, encrypted)
     if decrypted == raw_content:
-        print("Decryption successful! The text matches the original.")
+        print("Decryption successful! The text matches the original. Check 'decrypted_text.txt' for the output.")
+        with open("decrypted_text.txt", "w") as f:
+            f.write(decrypted)
     else:
         print("Decryption failed! The text does NOT match the original.")
-
-    # Optionally display decrypted text
-    print("\nDecrypted text:")
-    print(decrypted)
-
 
 if __name__ == "__main__":
     main()
